@@ -133,7 +133,47 @@ const hellowPromise = () => {
 
 hellowPromise()
 .then( (resp) => {
-    console.log(resp)
+    //console.log(resp)
 }).catch( err => {
-    console.error(err);
+    //console.error(err);
 });
+
+
+// Clases
+
+class calculator{
+    constructor(){
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+
+    sum(valueA, valueB){
+        this.valueA = valueA;
+        this.valueB = valueB;
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new calculator();
+console.log('Suma: ' + calc.sum(9, 10));
+
+// Modulos
+
+// import {hello} from './module'
+// hello();
+
+// Generators
+
+function* helloWorld(){
+    if(true){
+        yield 'Hello, '
+    }
+    if(true){
+        yield 'Word';
+    }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value)
+console.log(generatorHello.next().value)
+console.log(generatorHello.next().value) 
