@@ -1,4 +1,3 @@
-
 // Parametros opcionales
 
 function newFnc(name, age, contry) {
@@ -6,7 +5,7 @@ function newFnc(name, age, contry) {
     var age = age || 32;
     var contry = contry || 'España';
     console.log(name, age, contry);
-    
+
 }
 
 function newFnc2(name = 'Toni', age = 26, contry = 'Andorra') {
@@ -51,7 +50,11 @@ let person = {
 
 // console.log(person.name, person.age)
 
-let { name, age, contry} = person;
+let {
+    name,
+    age,
+    contry
+} = person;
 // console.log(name, age, contry);
 
 // Spread operator
@@ -83,3 +86,54 @@ let education = ['David', ...team2, ...team1];
 // console.log(a)
 
 
+
+let nombre = 'Toni';
+let edad = 26;
+// es5
+obj = {
+    nombre: nombre,
+    edad: edad
+};
+// es6
+obj2 = {
+    nombre,
+    edad
+}
+console.log(obj2);
+
+// Arrow functions
+
+const names = [{
+        name: 'Toni',
+        age: 26
+    },
+    {
+        name: 'Antonio',
+        age: 30
+    }
+];
+
+let listOfNames = names.map( function(item){
+    //console.log(item.name);
+})  
+
+let listOfNames2 = names.map(item => console.log('ES6: ', item.name))
+
+// Promises
+
+const hellowPromise = () => {
+    return new Promise( (resolve, reject) => {
+        if(true){
+            resolve('Promesa: todo correcto')
+        }else{
+            reject('Promesa: Errorrrr');
+        }
+    })
+}
+
+hellowPromise()
+.then( (resp) => {
+    console.log(resp)
+}).catch( err => {
+    console.error(err);
+});
